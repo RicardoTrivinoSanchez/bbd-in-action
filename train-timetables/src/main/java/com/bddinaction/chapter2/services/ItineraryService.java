@@ -11,7 +11,11 @@ import java.util.TreeSet;
 
 public class ItineraryService {
 
-    private TimetableService timetableService;
+    private final InMemoryTimetableService timetableService;
+
+    public ItineraryService(InMemoryTimetableService timetableService) {
+        this.timetableService = timetableService;
+    }
 
     public List<LocalTime> findNextDepartures(String departure,
                                               String destination,

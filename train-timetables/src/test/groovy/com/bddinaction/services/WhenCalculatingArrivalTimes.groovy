@@ -1,14 +1,14 @@
 package com.bddinaction.services
 
 import com.bddinaction.chapter2.model.Line
+import com.bddinaction.chapter2.services.InMemoryTimetableService
 import com.bddinaction.chapter2.services.ItineraryService
-import com.bddinaction.chapter2.services.TimetableService
 import org.joda.time.LocalTime
 import spock.lang.Specification
 
 class WhenCalculatingArrivalTimes extends Specification {
 
-    TimetableService timetableService = Mock(timetableService)
+    InMemoryTimetableService timetableService = Mock(InMemoryTimetableService)
     ItineraryService itineraryService = new ItineraryService(timetableService)
 
     def "should calculate the correct arrival time"() {
