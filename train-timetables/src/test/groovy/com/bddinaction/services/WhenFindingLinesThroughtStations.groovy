@@ -14,11 +14,11 @@ class WhenFindingLinesThroughtStations extends Specification {
 
         then:
             def expectedLine = Line.named(lineName).departingFrom(lineDeparture)
-            lines == expectedLine
+            lines == [expectedLine]
         where:
             departure     | destination   | lineName  | lineDeparture
             "Parramatta"  | "Town Hall"   | "Western" | "Emu Plains"
             "Town Hall"   | "Parramatta"  | "Western" | "North Richmond"
-            "Strathfield" | "Epping"      | "Epping"  | "City"
+            "Strathfield" | "Epping"      | "Epping"  | "Central"
     }
 }

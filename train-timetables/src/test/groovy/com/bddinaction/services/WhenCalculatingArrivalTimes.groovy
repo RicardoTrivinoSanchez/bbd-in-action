@@ -23,7 +23,7 @@ class WhenCalculatingArrivalTimes extends Specification {
                                                                         "Town Hall",
                                                                         at(8,0))
         then:
-            proposedTrainTimes == [at(8,02), at(8,11), at(8,14)]
+            proposedTrainTimes == [at(8,02), at(8,11), at(8,14),at(8,21)]
     }
 
     def at(int hour, int minute) {
