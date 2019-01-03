@@ -11,6 +11,7 @@ import java.util.TreeSet;
 
 public class ItineraryService {
 
+    private static final int MAX_ARRIVAL_TIMES = 4;
     private final InMemoryTimetableService timetableService;
 
     public ItineraryService(InMemoryTimetableService timetableService) {
@@ -25,7 +26,7 @@ public class ItineraryService {
         List<LocalTime> allArrivalTimes = getArrivalTimesOnlines (lines,
                                                                 departure);
         List<LocalTime> candidateArrivalTimes = findArrivalTimesAfter (startTime, allArrivalTimes);
-        return atMost(3, candidateArrivalTimes);
+        return atMost(MAX_ARRIVAL_TIMES, candidateArrivalTimes);
     }
 
     private List<LocalTime> getArrivalTimesOnlines(List<Line> lines, String station) {
